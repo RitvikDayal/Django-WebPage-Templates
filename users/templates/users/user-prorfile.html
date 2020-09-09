@@ -1,0 +1,41 @@
+{% extends 'users/base.html' %}
+{% block content %}
+
+<!-- Start: Parallax Background -->
+    <div data-bs-parallax-bg="true" style="height: 400px;background-image: url(https://unsplash.it/1800/900?image=1051);background-position: center;background-size: cover;width: 100%;">
+    </div>
+    <!-- End: Parallax Background -->
+
+    <div class="container-fluid text-center" style="background-color: rgba(14,14,14,0);color: #010101;margin-top: -182px;">
+        <div class="row">
+            <div class="col-auto text-center m-auto" style="padding-top: 0;width: 100%;">
+                <div class="card text-center" style="background-color: rgba(255,255,255,0); border: 0px!important;">
+                    <div class="card-body text-center" style="background-color: rgba(255,255,255,0);width: 100%;">
+                        <img class="rounded-circle" style="background-size: contain;" src="{{ user.profile.profile_img.url}}" width="300px" height="300px" loading="lazy">
+
+                        <h1 class="card-title">@{{user.username}}</h1>
+                        
+                        <h3 class="text-muted card-subtitle mb-2">
+                        {{user.profile.first_name}} {{user.profile.last_name}}
+                        </h3>
+                        
+                        <h2 class="text-primary border rounded-0 card-subtitle mb-2" style="margin-top: 5px;">Contact Info
+                        </h2>
+
+                        <p>
+                            <span style="font-size: 24px;">&nbsp;Email Id: {{user.email}}&nbsp;</span>
+                            <span style="font-size: 24px;">Phone: {{user.profile.phone}}&nbsp;</span>
+                        </p>
+                        
+                        <i class="fa fa-trash-o" style="font-size: 30px;"></i>
+                        <a class="card-link" href="#" style="font-size: 32px;padding: 10px;color: rgb(255,0,15);">DELETE</a>
+                        
+                        <i class="fa fa-pencil" style="font-size: 30px;padding-left: 15px;"></i>
+                        <a class="card-link" href="#" style="font-size: 32px;padding: 10px;color: rgb(0,117,255);">EDIT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock content %}
